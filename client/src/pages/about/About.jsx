@@ -3,7 +3,7 @@ import "./about.css"
 
 
 const About = () => {
-    const PF = "http://localhost:5000/images/"
+    const PF = "https://serenity-blog.herokuapp.com/images/"
     return (
         <div className="about">
             <span className="aboutTitle">About Me</span>

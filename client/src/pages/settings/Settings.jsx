@@ -2,7 +2,7 @@ import "./settings.css";
 import Sidebar from "../../components/sidebar/Sidebar";
 import { useContext, useState } from "react";
 import { Context } from "../../context/Context";
-import { axiosInstance } from "../../config";
+import axios from "axios";
 
 export default function Settings() {
   const [file, setFile] = useState(null);
@@ -30,13 +30,11 @@ export default function Settings() {
       data.append("file", file);
       updatedUser.profilePic = filename;
       try {
-        await axiosInstance.post("/upload", data);
+        await axios.post("https://serenity-blog.herokuapp.com/upload", data);
       } catch (err) {console.log(err)}
     }
     try {
-      console.log(updatedUser)
-      const res = await axiosInstance.put("/users/" + user._id, updatedUser);
-      console.log(res)
+      const res = await axios.put("https://serenity-blog.herokuapp.com/users/" + user._id, updatedUser);
       setSuccess(true);
       dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
     } catch (err) {
