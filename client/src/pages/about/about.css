@@ -1,0 +1,30 @@
+.about {
+  height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutTitle {
+  text-align: center;
+  margin: 10px;
+  font-family: "Lora", serif;
+  font-size: 28px;
+}
+
+.aboutImg {
+  width: 250px;
+  height: 250px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin: 30px, 15px;
+  object-position: center;
+}
+
+.aboutText {
+    color: #666;
+    font-size: 18px;
+    line-height: 25px; 
+    margin-top: 15px;
+}

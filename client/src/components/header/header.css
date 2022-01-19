@@ -1,0 +1,26 @@
+.header {
+  margin-top: 60px;
+}
+
+.headerTitles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Oxygen', sans-serif;
+  color: #444;
+}
+
+.headerTitleMd {
+  position: absolute;
+  top: 18%;
+  font-size: 30px;
+  font-style: italic;
+}
+
+.headerImg{
+    width: 100%;
+    height: 450px;
+    margin-top: 65px;
+    object-fit: cover;
+    object-position: 200px 100x;
+}
