@@ -8,10 +8,13 @@
     "nodemon": "^2.0.7",
     "path": "^0.12.7"
   },
-  "name": "api",
+  "name": "serenity-blog",
   "version": "1.0.0",
   "main": "index.js",
   "devDependencies": {},
+  "engines": {
+    "node:": "16.13.0"
+  },
   "scripts": {
     "start": "node index.js",
     "heroku-postbuild": "cd client && npm install && npm run build"
