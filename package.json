@@ -13,7 +13,7 @@
   "main": "index.js",
   "devDependencies": {},
   "engines": {
-    "node:": "16.13.0"
+    "node": "16.13.0"
   },
   "scripts": {
     "start": "node index.js",
