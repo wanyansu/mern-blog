@@ -2,7 +2,7 @@ import "./settings.css";
 import Sidebar from "../../components/sidebar/Sidebar";
 import { useContext, useState } from "react";
 import { Context } from "../../context/Context";
-import axiosInstance from "../../config";
+import { axiosInstance } from "../../config";
 
 export default function Settings() {
   const [file, setFile] = useState(null);
@@ -12,7 +12,7 @@ export default function Settings() {
   const [success, setSuccess] = useState(false);
 
   const { user, dispatch } = useContext(Context);
-  const PF = "http://localhost:5000/images/"
+  const PF = "https://serenity-blog.herokuapp.com/images/"
 
   const handleSubmit = async (e) => {
     e.preventDefault();

@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import "./write.css";
-import axiosInstance from "../../config";
+import { axiosInstance } from "../../config";
 import { Context } from "../../context/Context";
 
 export default function Write() {
