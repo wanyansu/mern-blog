@@ -1,6 +1,6 @@
 import "./settings.css";
 import Sidebar from "../../components/sidebar/Sidebar";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Context } from "../../context/Context";
 import { axiosInstance } from "../../config";
 
@@ -13,6 +13,13 @@ export default function Settings() {
 
   const { user, dispatch } = useContext(Context);
   const PF = "https://serenity-blog.herokuapp.com/images/"
+
+  useEffect(() =>{
+    const user = JSON.parse(localStorage.getItem("user"))
+    setUsername(user.username)
+    setEmail(user.email)
+    setPassword(user.password)
+  }, [])
 
   const handleSubmit = async (e) => {
     e.preventDefault();
