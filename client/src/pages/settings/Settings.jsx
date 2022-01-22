@@ -1,6 +1,6 @@
 import "./settings.css";
 import Sidebar from "../../components/sidebar/Sidebar";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Context } from "../../context/Context";
 import { axiosInstance } from "../../config";
 
@@ -13,6 +13,13 @@ export default function Settings() {
 
   const { user, dispatch } = useContext(Context);
   const PF = "https://serenity-blog.herokuapp.com/images/"
+
+  useEffect(() =>{
+    const user = JSON.parse(localStorage.getItem("user"))
+    setUsername(user.username)
+    setEmail(user.email)
+    setPassword(user.password)
+  }, [])
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -69,20 +76,20 @@ export default function Settings() {
           <input
             type="text"
             placeholder={user.username}
-            value = {user.username}
+            value = {username}
             onChange={(e) => setUsername(e.target.value)}
           />
           <label>Email</label>
           <input
             type="email"
             placeholder={user.email}
-            value = {user.email}
+            value = {email}
             onChange={(e) => setEmail(e.target.value)}
           />
           <label>Password</label>
           <input
             type="password"
-            value = {user.password}
+            value = {password}
             onChange={(e) => setPassword(e.target.value)}
           />
           <button className="settingsSubmit" type="submit">
